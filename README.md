@@ -51,25 +51,16 @@ Figure -02 HALF Subtractor
 **Program:**
 
 ```
-
-
-i)FULL ADDER
-
-module fa(a,b,cin,sum,carry);
-input a,b,cin;
-output sum,carry;
-assign sum=( (a ^ b)^cin);
-assign carry= ( (a & b)| ( cin &(a ^ b )));
+module DEexp3(a,b,cy,sm,df,bo);
+input a,b;
+output sm,cy,df,bo;
+xor(sm,a,b);
+and(cy,a,b);
+xor(df,a,b);
+and(bo,~a,b);
 endmodule
 
-ii)FULL SUBTRACTOR
 
-module fs(a,b,bin,difference,borrow);
-input a,b,bin;
-output difference,borrow;
-assign difference= ( (a ^ b)^bin);
-assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
-endmodule
 
 ```
 
